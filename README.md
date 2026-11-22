@@ -8,7 +8,10 @@ MARO는 언어와 정보 접근의 어려움을 겪는 다문화 가정을 위�
 
 **[MARO 시연 영상](https://youtu.be/C_7E7TXHkB0)**
 
-<!-- 이미지 추가: 프로젝트 대표 이미지 또는 앱 메인 화면 -->
+
+<p align="center">
+  <img src="assets/images/maro-cover.png" width="900" alt="MARO 프로젝트 대표 이미지" />
+</p>
 
 ---
 
@@ -117,7 +120,15 @@ MARO의 서비스 기획에 참여하고, **Android 프론트엔드 개발을 �
 
 예방접종 정보는 Room DB에 저장하여 주요 화면에서 반복적으로 조회할 수 있도록 했으며, 보호자가 접종 상태와 예정 일정을 쉽게 구분할 수 있도록 목록과 상세 화면을 구성했습니다.
 
-<!-- 이미지 추가: 아동 등록 / 예방접종 목록 / 접종 상세 화면 -->
+<p align="center">
+  <img src="assets/images/child-registration.png" width="180" alt="아동 등록 화면" />
+  <img src="assets/images/vaccination-home.png" width="180" alt="예방접종 메인 화면" />
+  <img src="assets/images/vaccination-detail.png" width="180" alt="예방접종 전체 목록" />
+  <img src="assets/images/vaccination-record.png" width="180" alt="예방접종 기록 관리" />
+</p>
+<p align="center">
+  <sub>아동 정보 등록 / 예방접종 메인 / 접종 전체 목록 / 접종 기록 관리</sub>
+</p>
 
 ### 02. Hospital Finder — 위치 기반 의료기관 탐색
 
@@ -136,7 +147,15 @@ MARO의 서비스 기획에 참여하고, **Android 프론트엔드 개발을 �
 
 서버에서 전달받은 의료기관 데이터와 접종 정보를 화면에 표시하고, 사용자가 지도와 상세 정보를 오가며 필요한 기관을 선택할 수 있도록 구현했습니다.
 
-<!-- 이미지 추가: 의료기관 지도 / 의료기관 상세 화면 -->
+
+<p align="center">
+  <img src="assets/images/hospital-map.png" width="260" alt="주변 의료기관 지도" />
+  <img src="assets/images/hospital-detail.png" width="260" alt="의료기관 상세 화면" />
+</p>
+<p align="center">
+  <sub>주변 의료기관 탐색 / 의료기관 상세 정보</sub>
+</p>
+
 
 ### 03. AI Feature Integration — AI 기능 연동
 
@@ -156,7 +175,16 @@ AI 담당자가 개발한 챗봇, CallScript, 예방접종 증명서 분석 기�
 
 텍스트 질문, 이미지 첨부, 음성 데이터 등 서로 다른 데이터 형식을 클라이언트에서 처리하고, 서버 결과가 실제 화면에 정상적으로 표시되는지 확인하며 연동 오류를 수정했습니다.
 
-<!-- 이미지 추가: AI 챗봇 / CallScript / 증명서 업로드 및 확인 -->
+
+<p align="center">
+  <img src="assets/images/callscript.png" width="220" alt="AI 전화 연습" />
+  <img src="assets/images/chatbot-image.png" width="220" alt="AI 챗봇" />
+  <img src="assets/images/certificate-gallery.png" width="220" alt="예방접종 증명서 갤러리" />
+</p>
+<p align="center">
+  <sub>CallScript 예상 답변 및 음성 / 이미지 기반 AI 챗봇 / 예방접종 증명서 선택</sub>
+</p>
+
 
 ### 04. Multilingual UI & Onboarding — 다국어 지원 및 초기 이용 흐름
 
@@ -176,7 +204,15 @@ AI 담당자가 개발한 챗봇, CallScript, 예방접종 증명서 분석 기�
 
 일부 실제 기기와 언어 환경에서 확인한 텍스트 잘림과 키보드 겹침 문제를 수정했습니다. 모든 기기와 지원 언어를 대상으로 검증한 것은 아닙니다.
 
-<!-- 이미지 추가: 언어 선택 / 온보딩 / 다국어 적용 화면 -->
+
+<p align="center">
+  <img src="assets/images/language-selection.png" width="220" alt="언어 선택 화면" />
+  <img src="assets/images/language-english.png" width="220" alt="영어 적용 화면" />
+  <img src="assets/images/language-vietnamese.png" width="220" alt="베트남어 적용 화면" />
+</p>
+<p align="center">
+  <sub>언어 선택 / 영어 적용 / 베트남어 적용</sub>
+</p>
 
 ---
 
