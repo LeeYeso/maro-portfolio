@@ -1,28 +1,86 @@
-# MARO Android Client
+# MARO (마로)
 
-Android client source for the MARO team project. This repository contains the Android app only, not the backend or AI services.
+### 다문화 가정의 의료 접근성을 높이는 아동 예방접종 관리 Android 서비스
 
-## Local configuration
+MARO는 언어와 정보 접근의 어려움을 겪는 다문화 가정을 위한 아동 예방접종 통합 관리 서비스입니다.
 
-Create `local.properties` in the repository root (this file is ignored by Git):
+아동별 예방접종 일정 관리와 주변 접종기관 탐색 기능을 제공하며, AI 챗봇과 전화 연습 기능을 통해 보호자가 의료 정보를 이해하고 실제 의료기관을 이용하는 과정을 돕습니다.
 
-```properties
-sdk.dir=/path/to/your/Android/sdk
-GOOGLE_MAPS_API_KEY=your_google_maps_api_key
-SERVER_BASE_URL=https://your-server.example/
-```
+---
 
-The Google Maps key is read during Gradle configuration and inserted into the Android manifest at build time. Use a restricted key and do not commit `local.properties`. Android app keys may still be extracted from distributed APKs, so restrict by Android package name, signing certificate SHA-1 and permitted APIs.
+### Project Information
 
-The original backend is not included and may no longer be online. Network-driven features require an independently running compatible server. The default endpoint is a nonfunctional placeholder.
+| 항목 | 내용 |
+|---|---|
+| 프로젝트 | 2025 Google Solution Challenge · MARO |
+| 개발 기간 | 2025.03 – 2025.05 |
+| 팀 구성 | 4명 |
+| 담당 역할 | Android Frontend Development · Service Planning |
 
-## Important
+**My Contributions**
+- Android 프론트엔드 단독 개발
+- 아동별 예방접종 일정 및 기록 관리 UI 구현
+- 위치 기반 의료기관 탐색 및 지도 화면 구현
+- AI 챗봇·CallScript·예방접종 증명서 분석 기능의 클라이언트 연동
+- 다국어 UI 적용 및 실제 기기 환경 테스트
+- 서비스 기능 기획 및 사용자 흐름 설계 참여
 
-The previously exposed Google Maps API key should be rotated or revoked in Google Cloud Console. Sanitizing new source does not erase copies from the old public repository or its Git history.
+**Team Contributions**
+- AI/ML: 챗봇, 전화 연습용 대화·음성 생성, 증명서 분석 기능
+- Backend: 의료기관 데이터 조회, 공공데이터 및 AI 서버 연계
+- UX/UI: 화면 디자인 및 그래픽 에셋 제작
 
-## Publishing checklist
+※ 팀 전체 기능과 개인 구현 범위를 구분하여 작성했습니다.
 
-- Do not commit `local.properties`, keystores, signing credentials or service account files.
-- The backend and AI services are not included. The app cannot demonstrate network-dependent features without a compatible backend.
-- Review ownership and permission for shared design assets before publishing.
-- Use a new repository with no imported Git history, and review the first commit before pushing.
+---
+
+## 🔍 Problem & Research
+
+### 언어와 정보의 장벽으로 어려움을 겪는 다문화 가정의 예방접종 관리
+
+MARO 팀은 다문화 가정 보호자가 아동의 예방접종 정보를 이해하고 실제 의료기관을 이용하는 과정에서 겪는 어려움에 주목했습니다.
+
+통계청 자료에 따르면 국내 다문화 가구는 **2015년 299,241가구에서 2023년 415,584가구로 약 39% 증가**했습니다. 그러나 한국의 의료체계와 언어에 익숙하지 않은 보호자는 예방접종 일정 확인부터 의료기관 문의까지 여러 장벽을 경험할 수 있습니다.
+
+### Background Research
+
+| 조사 내용 | 주요 발견 |
+|---|---|
+| 다문화 가구 증가 | 2015년 대비 2023년 약 39% 증가 |
+| 의료 정보 접근 | 전문적인 의료 용어와 한국어 중심의 정보 제공으로 이해에 어려움 발생 |
+| 의료기관 이용 | 병원 문의 및 예약 과정에서 언어 장벽 발생 |
+| 예방접종 관리 | 아동별 일정과 접종 이력을 보호자가 직접 확인하고 관리해야 하는 부담 |
+
+*참고: 통계청 인구총조사(2023), 「다문화가족의 건강요구에 기반한 정책 및 ICT 활용방안」 관련 선행연구*
+
+### Problem Definition
+
+기존 자료 조사와 관련 연구를 통해 세 가지 핵심 문제를 정의했습니다.
+
+1. **의료 정보 접근의 어려움** — 한국어 중심의 예방접종 정보와 전문 용어로 인해 필요한 내용을 이해하기 어려움
+2. **의료기관 이용의 언어 장벽** — 병원을 찾더라도 전화 문의나 의료진과의 의사소통에 어려움 발생
+3. **예방접종 관리의 부담** — 자녀별 접종 일정과 기록을 확인하고 지속적으로 관리하기 어려움
+
+MARO는 이러한 문제를 해결하기 위해 **정보 확인 → 일정 관리 → 의료기관 탐색 → 의사소통 지원**으로 이어지는 통합 예방접종 관리 서비스를 기획했습니다.
+
+
+---
+
+## 💡 Solution
+
+### 예방접종 정보 확인부터 실제 의료기관 이용까지
+
+MARO는 다문화 가정 보호자가 예방접종 과정에서 겪는 언어와 정보의 장벽을 줄이기 위해 **정보 확인 → 일정 관리 → 의료기관 탐색 → 의사소통 지원**으로 이어지는 서비스를 설계했습니다.
+
+단순히 예방접종 정보를 제공하는 데 그치지 않고, 보호자가 필요한 정보를 이해하고 실제 접종까지 이어갈 수 있도록 기능을 구성했습니다.
+
+| 핵심 기능 | 해결하고자 한 문제 | 제공 기능 |
+|---|---|---|
+| **다국어 지원** | 한국어 중심의 의료 정보로 인한 접근성 문제 | 한국어·영어·중국어·일본어·베트남어·태국어 지원 |
+| **아동별 예방접종 관리** | 자녀별 접종 일정 및 이력 관리의 어려움 | 생년월일 기반 일정 생성, 접종 상태 관리, 캘린더 연동 |
+| **주변 접종기관 탐색** | 접종 가능한 의료기관을 찾고 정보를 확인하는 어려움 | 위치 기반 의료기관 검색, 접종 정보 및 상세 정보 제공 |
+| **AI 전화 연습(CallScript)** | 병원 전화 문의 과정의 언어 장벽 | 예상 질문·답변 생성, 번역 및 한국어 음성 제공 |
+| **AI 예방접종 챗봇** | 예방접종 및 다문화 지원 정책 정보 이해의 어려움 | RAG 기반 질의응답 및 이미지 기반 상담 보조 |
+| **예방접종 증명서 확인** | 접종 이력을 직접 확인하고 기록해야 하는 부담 | 증명서 이미지 분석 및 접종 정보 확인·기록 |
+
+이러한 기능을 통해 보호자가 **자녀의 접종 일정을 파악하고, 필요한 의료기관을 찾고, 의료진과 소통하는 과정**을 하나의 앱에서 지원하고자 했습니다.
