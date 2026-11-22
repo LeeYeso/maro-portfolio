@@ -1,0 +1,17 @@
+# IDE / local machine
+.idea/
+*.iml
+local.properties
+*.keystore
+*.jks
+.env
+.env.*
+
+# Build output
+.gradle/
+**/build/
+.cxx/
+
+# OS files
+.DS_Store
+Thumbs.db
