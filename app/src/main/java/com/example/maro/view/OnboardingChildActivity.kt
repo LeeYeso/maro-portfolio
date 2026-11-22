@@ -58,12 +58,19 @@ class OnboardingChildActivity : AppCompatActivity() {
 
         val radioBoy = findViewById<RadioButton>(R.id.radio_boy)
         val radioGirl = findViewById<RadioButton>(R.id.radio_girl)
-        val selector = ContextCompat.getColorStateList(this, R.color.radiobutton_color)
+
+        val selector = ContextCompat.getColorStateList(
+            this,
+            R.color.radiobutton_color
+        )
 
         radioBoy.buttonTintList = selector
         radioGirl.buttonTintList = selector
-        radioBoy.setTextColor(selector!!)
-        radioGirl.setTextColor(selector)
+
+        selector?.let {
+            radioBoy.setTextColor(it)
+            radioGirl.setTextColor(it)
+        }
 
         // Initially disable the Continue button
         continueButton.isEnabled = false
@@ -91,12 +98,19 @@ class OnboardingChildActivity : AppCompatActivity() {
         // Configure radio buttons
         val radioBoy = cardView.findViewById<RadioButton>(R.id.radio_boy)
         val radioGirl = cardView.findViewById<RadioButton>(R.id.radio_girl)
-        val selector = ContextCompat.getColorStateList(this, R.color.radiobutton_color)
+
+        val selector = ContextCompat.getColorStateList(
+            this,
+            R.color.radiobutton_color
+        )
 
         radioBoy.buttonTintList = selector
         radioGirl.buttonTintList = selector
-        radioBoy.setTextColor(selector!!)
-        radioGirl.setTextColor(selector)
+
+        selector?.let {
+            radioBoy.setTextColor(it)
+            radioGirl.setTextColor(it)
+        }
 
         // Configure remove button
         val removeBtn = cardView.findViewById<ImageButton>(R.id.button_remove_child)

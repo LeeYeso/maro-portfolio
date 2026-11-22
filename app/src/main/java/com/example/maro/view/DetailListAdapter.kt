@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.maro.R
@@ -259,7 +260,11 @@ class DetailListAdapter(
 
                     context.startActivity(intent)
                 } catch (e: Exception) {
-                    e.printStackTrace()
+                    Toast.makeText(
+                        context,
+                        "Unable to open calendar.",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         }

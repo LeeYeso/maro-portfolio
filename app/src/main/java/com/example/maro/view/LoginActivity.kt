@@ -3,7 +3,6 @@ package com.example.maro.view
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -65,8 +64,11 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             } catch (e: ApiException) {
-                Log.w("GoogleLogin", "Login Fail: ${e.statusCode}", e)
-                Toast.makeText(this, "Google Login Fail: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Google login failed. Please try again.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 }

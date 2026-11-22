@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -312,7 +311,6 @@ class DetailListActivity : AppCompatActivity() {
                     )
                 }"
             } catch (e: Exception) {
-                Log.e("PeriodFormat", "Date format conversion failed: $rawPeriod", e)
                 rawPeriod
             }
 
@@ -376,7 +374,6 @@ class DetailListActivity : AppCompatActivity() {
                         getString(R.string.upload_failed),
                         Toast.LENGTH_SHORT
                     ).show()
-                    Log.e("Upload", "Network error", t)
                 }
             })
         }
